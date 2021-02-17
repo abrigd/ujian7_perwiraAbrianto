@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "785044299313",
+    "project_id": "batch7dialogflow",
+    "storage_bucket": "batch7dialogflow.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785044299313:android:bb2325d3a6b84be26e3f10",
+        "android_client_info": {
+          "package_name": "com.laporansiskamling"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "785044299313-tqdokpk0bah8kkv6ipn4hu7cbj18ruk8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAODsJyG9Ra6yCvB9xLLY11c2y201tKVdg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "785044299313-tqdokpk0bah8kkv6ipn4hu7cbj18ruk8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
