@@ -6,51 +6,42 @@
  * @flow strict-local
  */
 
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {View} from 'react-native';
 import firestore from '@react-native-firebase/firestore';
+import Register from './Screen/Register/Register';
+import Login from './Screen/Login/Login';
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
+
+const Stack = createStackNavigator();
 
 export default class App extends Component {
+  componentDidMount() {
+    firestore()
+      .collection('users')
+      .get()
+      .then((querySnapshot) => {   
+        console.log('Total users: ', querySnapshot.size);
 
-  componentDidMount(){
-  //   console.log("mulai")
-  //   const data = {
-  //     id: "12345",
-  //     email : "abri@gmail.com",
-  //     fullName : "abri",
-  // };
-
-  //   const usersRef = firebase.firestore().collection('users')
-  //   usersRef
-  //       .doc("1234567890")
-  //       .set(data)
-  //       .then(() => {
-  //           console.log("success")
-  //       })
-  //       .catch((error) => {
-  //         console.log(error)
-  //       });
-
-  firestore()
-  .collection('users')
-  .get()
-  .then(querySnapshot => {
-    console.log('Total users: ', querySnapshot.size);
-
-    querySnapshot.forEach(documentSnapshot => {
-      console.log('User ID: ', documentSnapshot.id, documentSnapshot.data());
-    });
-  });
+        querySnapshot.forEach((documentSnapshot) => {
+          console.log(
+            'User ID: ',
+            documentSnapshot.id,
+            documentSnapshot.data(),
+          );
+        });
+      });
   }
 
   render() {
     return (
-     <View>
-
-     </View>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Registration" component={Register} />
+        </Stack.Navigator>
+      </NavigationContainer>
     );
   }
 }
-
-
-

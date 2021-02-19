@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "785044299313",
+    "firebase_url": "https://batch7dialogflow-default-rtdb.firebaseio.com",
     "project_id": "batch7dialogflow",
     "storage_bucket": "batch7dialogflow.appspot.com"
   },
